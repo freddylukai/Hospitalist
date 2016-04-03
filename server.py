@@ -29,6 +29,7 @@ def createdb(cursor):
         " `ID`  int(9) NOT NULL PRIMARY KEY AUTO_INCREMENT,"
         " `LastName` varchar(16) NOT NULL."
         " `FirstName` varchar(16) NOT NULL,"
+        " `Age` int NOT NULL DEFAULT 0"
         " `Queue` int(5) NOT NULL,"
         " `ESI` int NOT NULL DEFAULT 5"
         ")"
@@ -69,7 +70,7 @@ def newpatient():
 @app.route('/queue/')
 def getqueue():
     print '<?xml version="1.0" encoding="UTF-8"?>'
-    query = ("SELECT FirstName, LastName, ESI FROM patients SORT BY Queue ASC")
+    query = ("SELECT FirstName, LastName, Age, ESI FROM patients SORT BY Queue ASC")
     connect = mysql.connector.connect(user='root', password='password', host='127.0.0.1')
     cursor = connect.cursor()
     cursor.execute(query)
