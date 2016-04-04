@@ -3,8 +3,6 @@ from flask import request
 import sys
 import mysql.connector
 from mysql.connector import errorcode
-from xml.dom.minidom import parse
-import xml.dom.minidom
 
 def createdb(cursor):
     TABLES = {}
@@ -61,17 +59,39 @@ def create_db():
     else:
         connect.close()
 
+@app.route('/newresource/', methods=['POST'])
+def newresource():
+    data = request.form
+    connect = mysql.connector.connect(user='root', password='password', host='127.0.0.1', database='triage')
+    cursor = connect.cursor()
+    query = ("INSERT INTO resourcetypes (Name, Total) VALUES (%s, %i)")
+    name = data['name']
+    total = data['total']
+    cursor.execute(query, (name, total))
+
+
 @app.route('/newpatient/', methods=['POST'])
 def newpatient():
-    print >>"newpatient.xml", request.form
-    data = xml.dom.minidom.parse("newpatient.xml")
-    #TODO: finish this part
+    data = request.form
+    connect = mysql.connector.connect(user='root', password='password', host='127.0.0.1', database='triage')
+    cursor = connect.cursor()
+    query = ("INSERT INTO patients (LastName, FirstName, Age, Queue, ESI) VALUES (%s, %s, %i, %i, %i)")
+    #TODO: Write a legit queuing algorithm
+    firstname = data['first_name']
+    lastname = data['last_name']
+    age = data['age']
+    esi = data['esi']
+    mostrecent = ("SELECT TOP 1 Queue FROM patients SORT BY Queue DESC") + 1
+    cursor.execute(query, (firstname, lastname, age, esi, mostrecent))
+
+
+
 
 @app.route('/queue/')
 def getqueue():
     print '<?xml version="1.0" encoding="UTF-8"?>'
     query = ("SELECT FirstName, LastName, Age, ESI FROM patients SORT BY Queue ASC")
-    connect = mysql.connector.connect(user='root', password='password', host='127.0.0.1')
+    connect = mysql.connector.connect(user='root', password='password', host='127.0.0.1', database='triage')
     cursor = connect.cursor()
     cursor.execute(query)
     for (FirstName, LastName, ESI) in cursor:
@@ -80,3 +100,6 @@ def getqueue():
         print '\t<last_name>%s</last_name>'.format(LastName)
         print '\t<esi>%i</esi>'.format(ESI)
         print '</patient>'
+
+if __name__ == '__main__':
+    app.run()
