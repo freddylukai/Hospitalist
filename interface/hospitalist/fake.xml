@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <patient>
+    <first_name>FirstName</first_name>
+    <last_name>LastName</last_name>
+    <age>18</age>
+    <esi>3</esi>
+    <resources>
+        <doctors>1</doctors>
+        <beds>1</beds>
+        <xrays>1</xrays>
+    </resources>
+</patient>
