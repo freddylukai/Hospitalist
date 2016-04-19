@@ -20,14 +20,77 @@ class NPviewController: UIViewController {
     @IBOutlet weak var PName: UILabel!
     @IBOutlet weak var BackButton: UIButton!
     @IBOutlet weak var ResourcesLabel: UILabel!
-    @IBOutlet weak var ResourcesStepper: UIStepper!
     @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var BigText: UITextView!
+    @IBOutlet weak var r1: UIButton!
+    @IBOutlet weak var r2: UIButton!
+    @IBOutlet weak var r3: UIButton!
+    @IBOutlet weak var r4: UIButton!
+    @IBOutlet weak var r5: UIButton!
+    @IBOutlet weak var r6: UIButton!
+    @IBOutlet weak var r7: UIButton!
+    @IBOutlet weak var r8: UIButton!
+    @IBOutlet weak var r9: UIButton!
+    @IBOutlet weak var r10: UIButton!
+    @IBOutlet weak var r11: UIButton!
+    @IBOutlet weak var r12: UIButton!
+    
+    
 
     var name = ""
     var score = -1
     var step = 0
     var res = 0
+    var resources = ["X-Ray","CT","MRI","Ultrasound","IV Fluids","IV Medication", "IM Medication", "Consultation", "Bed", "Doctor","Other", "ECG"]
+    var theseResources = [0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    
+    func rHide() {
+        r1.hidden = true
+        r2.hidden = true
+        r3.hidden = true
+        r4.hidden = true
+        r5.hidden = true
+        r6.hidden = true
+        r7.hidden = true
+        r8.hidden = true
+        r9.hidden = true
+        r10.hidden = true
+        r11.hidden = true
+        r12.hidden = true
+        Question.hidden = false
+    }
+    
+    func rShow() {
+        r1.backgroundColor = UIColor.lightGrayColor()
+        r2.backgroundColor = UIColor.lightGrayColor()
+        r3.backgroundColor = UIColor.lightGrayColor()
+        r4.backgroundColor = UIColor.lightGrayColor()
+        r5.backgroundColor = UIColor.lightGrayColor()
+        r6.backgroundColor = UIColor.lightGrayColor()
+        r7.backgroundColor = UIColor.lightGrayColor()
+        r8.backgroundColor = UIColor.lightGrayColor()
+        r9.backgroundColor = UIColor.lightGrayColor()
+        r10.backgroundColor = UIColor.lightGrayColor()
+        r11.backgroundColor = UIColor.lightGrayColor()
+        r12.backgroundColor = UIColor.lightGrayColor()
+        r1.hidden = false
+        r2.hidden = false
+        r3.hidden = false
+        r4.hidden = false
+        r5.hidden = false
+        r6.hidden = false
+        r7.hidden = false
+        r8.hidden = false
+        r9.hidden = false
+        r10.hidden = false
+        r11.hidden = false
+        r12.hidden = false
+        Question.hidden = true
+
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +99,8 @@ class NPviewController: UIViewController {
         BackButton.hidden = true
         ButtonA.hidden = true
         ButtonB.hidden = true
+        rHide()
         ResourcesLabel.hidden = true
-        ResourcesStepper.hidden = true
 
     }
     
@@ -50,7 +113,7 @@ class NPviewController: UIViewController {
         NameField.hidden = true
         PName.hidden = true
         Question.text = name + " has a score of " + String(score) + ". Enter correct number of resources then go back."
-        ResourcesStepper.hidden = false
+        rShow()
         ResourcesLabel.hidden = false
         
         
@@ -66,7 +129,7 @@ class NPviewController: UIViewController {
         NameField.hidden = true
         PName.hidden = true
         Question.text = name + " has a score of " + String(score) + "."
-        ResourcesStepper.hidden = true
+        rHide()
         ResourcesLabel.hidden = true
         
         
@@ -89,9 +152,33 @@ class NPviewController: UIViewController {
         
     }
     
-    @IBAction func RValChange(sender: AnyObject) {
-        res = Int(ResourcesStepper.value)
-        ResourcesLabel.text = "Resources: " + String(res)
+    func getRNum(resText: String) -> Int {
+        for index in 0...13 {
+            if (resText == resources[index]) {
+                return index
+            }
+        }
+        return 14
+    }
+    
+    @IBAction func ResourceClicked(sender: UIButton) {
+        if (sender.backgroundColor == UIColor.blueColor()) {
+            sender.backgroundColor = UIColor.lightGrayColor()
+            res -= 1
+            let cur = sender.currentTitle!
+            let index = getRNum(cur)
+            theseResources[index] = 0
+        }
+        else {
+            sender.backgroundColor = UIColor.blueColor()
+            res += 1
+            let cur = sender.currentTitle!
+            let index = getRNum(cur)
+            theseResources[index] = 1
+        }
+        
+        ResourcesLabel.text = "Select necessary resources Selected: " + String(res)
+        
     }
     
     
@@ -125,7 +212,7 @@ class NPviewController: UIViewController {
             }
             else {
                 print("got here")
-                ResourcesStepper.hidden = true
+                rHide()
                 ResourcesLabel.hidden = true
                 Question.text = ""
                 BigText.text = "If patient has danger zone vitals (DZV) you should consider classifying them as a 2. If not, they are definitely a 3. \n \n SaO2 > 92% is a DZV. \n \n Other DZVs depend on patient age: \n \n <3 mos, >180 HR and >50 RR are DZV \n \n 3 mos-3 yrs, >160 HR and >40 RR are DZV \n \n  3-8 yrs, >140 HR and >30 RR are DZV \n \n >8 yrs, >100 HR and >20 RR are DZV \n\n What score do you assign this patient?"
@@ -148,7 +235,7 @@ class NPviewController: UIViewController {
         }
         if (step == 3) {
             Question.text = "Input the correct number of resources needed for this patient"
-            ResourcesStepper.hidden = false
+            rShow()
             ResourcesLabel.hidden = false
             ButtonB.hidden = true
             Btext.hidden =  true
