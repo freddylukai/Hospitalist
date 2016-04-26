@@ -16,9 +16,9 @@ class IterableQueue():
 def getCPL(opNode):
 	return opNode.cpl
 
-def calcCPLs(graph, recipeNode):
+def calcCPLs(graph, rootNode):
 	bag = set()
-	while(recipeNode.reached != True):
+	while(rootNode.reached != True):
 		for key in graph.graph_dict:
 			if (graph.graph_dict[key] == []):
 				key.reached = True
@@ -33,18 +33,15 @@ def calcCPLs(graph, recipeNode):
 				for c in key.children:
 					if(c.cpl > maxcpl):
 						maxcpl = c.cpl
-				if(key.involvement == True):
-					key.cpl = key.duration + maxcpl
+					key.cpl = key.resources + maxcpl
 					#print("checkpoint")
-				else:
-					key.cpl = maxcpl
 
 			bag.add(key)
 	return bag
 
-def schedule(l, recipeNode):
+def schedule(l, rootNode):
 	order = []
-	while(recipeNode.completed != True):
+	while(rootNode.completed != True):
 		for n in l:
 			if n.completed == False:
 				if reachable(n):
@@ -67,27 +64,27 @@ if __name__ == "__main__":
  children5 = Set([])
 
 
- recipeNode = opNode(5, children5, 15, False) 
+ rootNode = opNode(5, children5, 15, False) 
  onode_1 = opNode(1, children1, 10, False)
  onode_2 = opNode(2, children2, 10, False)
  onode_3 = opNode(3, children3, 5, True)
  onode_4 = opNode(4, children4, 20, False)
 	
 
- recipeNode.add_child(onode_2)
- recipeNode.add_child(onode_4)
+ rootNode.add_child(onode_2)
+ rootNode.add_child(onode_4)
  onode_4.add_child(onode_3)
  onode_4.add_child(onode_1)
 
 
- graph = genGraph(recipeNode)
+ graph = genGraph(rootNode)
 
- result =(calcCPLs(graph, recipeNode))
+ result =(calcCPLs(graph, rootNode))
 
  l = list(sorted(result, key=getCPL, reverse=True))
 
 
- optimalOrder = schedule(l, recipeNode)
+ optimalOrder = schedule(l, rootNode)
 
  for s in optimalOrder:
  	print("node: " + str(s.idx) + "cpl: " + str(s.cpl))

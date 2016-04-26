@@ -1,20 +1,20 @@
 from opNode import opNode
 from Graph import Graph
-import queue
+import Queue
 ##import Queue
 
 
 
-def genGraph(recipeNode):
-    g = {recipeNode: set(recipeNode.children)}
-    nodeQueue = queue.Queue()
-    curNode = recipeNode
+def genGraph(rootNode):
+    g = {rootNode: set(rootNode.children)}
+    nodeQueue = Queue.Queue()
+    curNode = rootNode
     graph = Graph(g)
 
-    for n in recipeNode.children:
+    for n in rootNode.children:
         nodeQueue.put(n)
         graph.add_vertex(n);
-        #print( str(n.idx)  + "is a child of " + str(recipeNode.idx))
+        #print( str(n.idx)  + "is a child of " + str(rootNode.idx))
 
 
     while (not nodeQueue.empty()):
@@ -45,7 +45,7 @@ if __name__ == "__main__":
      children14 = Set([])
 
 
-     recipeNode = opNode(14, children14, 0, False) 
+     rootNode = opNode(14, children14, 0, False) 
      onode_13 = opNode(13, children13, 15, False) ##oranges
      onode_12 = opNode(12, children12, 10, False) ##garnish
      onode_11 = opNode(11, children11, 5, False)  ##pile
@@ -61,7 +61,7 @@ if __name__ == "__main__":
      onode_1 = opNode(1, children1, 600, True)  ##preheat oven
         
 
-     recipeNode.add_child(onode_13)
+     rootNode.add_child(onode_13)
      onode_13.add_child(onode_12)
      onode_12.add_child(onode_11)
      onode_11.add_child(onode_10)
@@ -76,7 +76,7 @@ if __name__ == "__main__":
      onode_5.add_child(onode_4)
      onode_4.add_child(onode_3)
 
-     graph = genGraph(recipeNode)
+     graph = genGraph(rootNode)
 
      print("Vertices of graph:")
      dependencies = graph.vertices()

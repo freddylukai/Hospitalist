@@ -14,23 +14,20 @@ import sys
 # involvement: This is true for passive tasks, and false for anything else
 
 class opNode:
-    def __init__(self, idx, children, duration,
-                 involvement):
+    def __init__(self, idx, children, resources):
         self.idx = idx
         self.children = []
-        self.duration = duration
-        self.involvement = involvement
+        self.resources = resources
         self.cpl = 0
-        self.completed = False # used to sequence
-        self.reached = False # used for topological sort
+        self.reached = False
+        self.completed = False
 
 
 # Helper functions for debugging
     def status(self):
         status = dict()
         status['id'] = self.idx
-        status['duration'] = self.duration
-        status['involvement'] = self.involvement
+        status['resources'] = self.resources
         status['childen'] = [d.idx for d in self.children]
         return status
 
