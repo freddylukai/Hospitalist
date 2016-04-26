@@ -180,7 +180,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="3Xr-qd-idv"/>
+                                    <action selector="BackButtonPunched:" destination="Gn8-QN-jBr" eventType="touchUpInside" id="uHo-2h-cb0"/>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="XJg-3i-0rI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wES-0K-S2q">
@@ -380,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwD-wp-LE9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1269" y="814"/>
+            <point key="canvasLocation" x="1129" y="770"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Lew-3w-35q">
@@ -431,6 +432,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3Xr-qd-idv"/>
+        <segue reference="XJg-3i-0rI"/>
     </inferredMetricsTieBreakers>
 </document>

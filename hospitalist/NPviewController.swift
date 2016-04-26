@@ -43,7 +43,7 @@ class NPviewController: UIViewController {
     var res = 0
     var resources = ["X-Ray","CT","MRI","Ultrasound","IV Fluids","IV Medication", "IM Medication", "Consultation", "Bed", "Doctor","Other", "ECG"]
     var theseResources = [0,0,0,0,0,0,0,0,0,0,0,0]
-    
+
     
     func rHide() {
         r1.hidden = true
@@ -104,6 +104,64 @@ class NPviewController: UIViewController {
 
     }
     
+    func prepareString() -> String {
+        let namesplit = name.componentsSeparatedByString(" ")
+        var fname = ""
+        if (namesplit.count > 0) {
+            fname = namesplit[0]
+        }
+        var lname = ""
+        if (namesplit.count > 1) {
+            for i in 1...(namesplit.count - 1) {
+                lname += namesplit[i]
+            }
+        }
+        var outstr = "first_name="+fname+"&last_name="+lname+"&age=0&esi=" + String(score) + "&res="
+        var first = 0
+        for i in 0...(theseResources.count - 1) {
+            if (theseResources[i] == 1) {
+                if (first == 0) {
+                    outstr += String(i)
+                    first += 1
+                }
+                else {
+                    outstr += ("," + String(i))
+                }
+            }
+        }
+        
+        
+        return outstr
+    }
+    
+    func sendRequest() {
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/newpatient/")!)
+        request.HTTPMethod = "POST"
+        let postString = prepareString()
+        print("poststring is"+postString)
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
+            guard error == nil && data != nil else {                                                          // check for fundamental networking error
+                print("error=\(error)")
+                return
+            }
+            
+            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {           // check for http errors
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(response)")
+            }
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
+        }
+        task.resume()
+    }
+    
+    
+    @IBAction func BackButtonPunched(sender: UIButton) {
+        sendRequest()
+    }
+    
     func endTextOne() {
         ButtonA.hidden = true
         Atext.text = ""
@@ -115,6 +173,7 @@ class NPviewController: UIViewController {
         Question.text = name + " has a score of " + String(score) + ". Enter correct number of resources then go back."
         rShow()
         ResourcesLabel.hidden = false
+        
         
         
         
