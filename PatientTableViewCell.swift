@@ -9,7 +9,12 @@
 import UIKit
 
 class PatientTableViewCell: UITableViewCell {
+    
+    //MARK: Properties
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

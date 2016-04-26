@@ -17,6 +17,11 @@
 		96463F991CB1858A00404268 /* hospitalistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96463F981CB1858A00404268 /* hospitalistUITests.swift */; };
 		9684F8231CB336D600C4EDF1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9684F8211CB336D600C4EDF1 /* SecondViewController.swift */; };
 		9684F8241CB336D600C4EDF1 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9684F8221CB336D600C4EDF1 /* SecondViewController.xib */; };
+		96F31AB31CC5CFFD0087C89B /* PatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F31AB21CC5CFFD0087C89B /* PatientTableViewCell.swift */; };
+		96F31AB91CC5D9C70087C89B /* PatientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F31AB81CC5D9C70087C89B /* PatientTableViewController.swift */; };
+		96F31AC11CC5DEE10087C89B /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F31AC01CC5DEE10087C89B /* Patient.swift */; };
+		96F31AC21CC5DEE10087C89B /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F31AC01CC5DEE10087C89B /* Patient.swift */; };
+		96F31AC31CC5DEE10087C89B /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F31AC01CC5DEE10087C89B /* Patient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,9 @@
 		96463F9A1CB1858A00404268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9684F8211CB336D600C4EDF1 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = hospitalist/SecondViewController.swift; sourceTree = "<group>"; };
 		9684F8221CB336D600C4EDF1 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondViewController.xib; path = hospitalist/SecondViewController.xib; sourceTree = "<group>"; };
+		96F31AB21CC5CFFD0087C89B /* PatientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientTableViewCell.swift; sourceTree = "<group>"; };
+		96F31AB81CC5D9C70087C89B /* PatientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientTableViewController.swift; sourceTree = "<group>"; };
+		96F31AC01CC5DEE10087C89B /* Patient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +91,9 @@
 		96463F6C1CB1858A00404268 = {
 			isa = PBXGroup;
 			children = (
+				96F31AC01CC5DEE10087C89B /* Patient.swift */,
+				96F31AB81CC5D9C70087C89B /* PatientTableViewController.swift */,
+				96F31AB21CC5CFFD0087C89B /* PatientTableViewCell.swift */,
 				9684F8211CB336D600C4EDF1 /* SecondViewController.swift */,
 				9684F8221CB336D600C4EDF1 /* SecondViewController.xib */,
 				96463F771CB1858A00404268 /* hospitalist */,
@@ -269,7 +280,10 @@
 			files = (
 				9684F8231CB336D600C4EDF1 /* SecondViewController.swift in Sources */,
 				96463F7B1CB1858A00404268 /* ViewController.swift in Sources */,
+				96F31AB31CC5CFFD0087C89B /* PatientTableViewCell.swift in Sources */,
 				314388021CC07E7700DD4F85 /* NPviewController.swift in Sources */,
+				96F31AC11CC5DEE10087C89B /* Patient.swift in Sources */,
+				96F31AB91CC5D9C70087C89B /* PatientTableViewController.swift in Sources */,
 				96463F791CB1858A00404268 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96463F8E1CB1858A00404268 /* hospitalistTests.swift in Sources */,
+				96F31AC21CC5DEE10087C89B /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96463F991CB1858A00404268 /* hospitalistUITests.swift in Sources */,
+				96F31AC31CC5DEE10087C89B /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

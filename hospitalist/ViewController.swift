@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     
     
-    @IBAction func link(sender: AnyObject) {
+   /* @IBAction func link(sender: AnyObject) {
         //UIApplication.sharedApplication().openURL(NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/")!)
         let URL = NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/gettest")
         
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         }
         
         
-    }
+    }*/
     
     @IBAction func queue(sender: UIButton) {
         
