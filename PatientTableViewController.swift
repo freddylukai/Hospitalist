@@ -35,17 +35,36 @@ class PatientTableViewController: UITableViewController {
     }
     
     func loadPatients(){
-        let URL = NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/gettests")
+        let URL = NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/queue")
         
         do {
             let htmlSource = try NSString(contentsOfURL: URL!, encoding: NSUTF8StringEncoding)
             let data = htmlSource.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
             
+            var foo = htmlSource.componentsSeparatedByString("\"")
             
-            print(htmlSource)
-            print(data)
-
-            do {
+            var name = foo[5]
+            var index = Int(foo[21])
+            let patient1 = Patient(name: name, index: index!)
+            
+            var name2 = foo[25]
+            var index2 = Int(foo[41])
+            let patient2 = Patient(name: name2, index: index2!)
+            
+            var name3 = foo[45]
+            var index3 = Int(foo[61])
+            let patient3 = Patient(name: name3, index: index3!)
+            
+            patients.append(patient1!)
+            patients.append(patient2!)
+            patients.append(patient3!)
+            
+            
+            /*print(foo.count)
+            print(foo[5])
+            *var dataArray = split(htmlSource) {$0 == ":"}*/
+            
+           /* do {
                 let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments ) as! [String: AnyObject]
                 
                 if let p = json["patientnames"] as? [String] {
@@ -53,7 +72,7 @@ class PatientTableViewController: UITableViewController {
                 }
             } catch {
                 print("error: \(error)")
-            }
+            }*/
         }
             
         catch let error as NSError{
