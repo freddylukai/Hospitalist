@@ -1,0 +1,25 @@
+import Queue
+
+def addPatient(p, patientQueue):
+
+
+if __name__ == "__main__":
+	patientQueue = Queue.Queue()
+	patienta = patient(3, 1)
+	patientb = patient(6, 4)
+	patientc = patient(2, 3)
+	patientd = patient(0, 4)
+	patiente = patient(2, 2)
+	patientf = patient(6, 1)
+
+	addPatient(patienta, patientQueue)
+	addPatient(patientb, patientQueue)
+	addPatient(patientc, patientQueue)
+	addPatient(patientd, patientQueue)
+	addPatient(patiente, patientQueue)
+	addPatient(patientf, patientQueue)
+
+
+
+
+
