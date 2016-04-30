@@ -1,0 +1,3 @@
+[submodule "Vendor/Freddy"]
+	path = Vendor/Freddy
+	url = https://github.com/bignerdranch/Freddy.git

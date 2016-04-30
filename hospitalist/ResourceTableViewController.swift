@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Freddy
 
 class ResourceTableViewController: UITableViewController {
     
@@ -26,34 +27,41 @@ class ResourceTableViewController: UITableViewController {
         let URL = NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/resourceview/")
         
         do {
-            let htmlSource = try NSString(contentsOfURL: URL!, encoding: NSUTF8StringEncoding)
-            var foo = htmlSource.componentsSeparatedByString("\"")
+            print("here we are")
             
-            print(foo)
-            var name1 = foo[5]
-            var total1 = Int(foo[9])
-            var available1 = Int(foo[13])
-            let resource1 = Resource(name: name1, total: total1!, available: available1!)
-            resources.append(resource1!)
-            
-            var name2 = foo[29]
-            var total2 = Int(foo[33])
-            var available2 = Int(foo[37])
-            let resource2 = Resource(name: name2, total: total2!, available: available2!)
-            resources.append(resource2!)
-            
-            var name3 = foo[41]
-            var total3 = Int(foo[45])
-            var available3 = Int(foo[49])
-            let resource3 = Resource(name: name3, total: total3!, available: available3!)
-            resources.append(resource3!)
+            var optData:NSData? = nil
+            do {
+                optData = try NSData(contentsOfURL: URL!, options: NSDataReadingOptions())
+            }
+            catch {
+                print("Handle \(error) here")
+            }
+            print("what about here")
+            if let data = optData {
+                print("here i am")
+                let myj = try JSON(data: data)
+                print("did we get this far")
+                print(myj)
+                let jres = try myj.array("resources")
+                for (index, v) in jres.enumerate() {
+                    print("index = " + String(index))
+                    print("v = " + String(v))
+                    let nam = try v.string("name")
+                    print("name : "+nam)
+                    let tot = Int(try v.string("total"))
+                    print("tot : "+String(tot))
+                    let ava = Int(try v.string("available"))
+                    print("ava : "+String(ava))
+
+                    let cur = Resource(name: nam, total: tot!, available: ava!)
+                    resources.append(cur!)
+                }
+            }
         }
             
         catch let error as NSError{
             print ("ERROR: \(error)")
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

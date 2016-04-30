@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		314388021CC07E7700DD4F85 /* NPviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314388011CC07E7700DD4F85 /* NPviewController.swift */; };
+		31D1B16C1CD534A700B25401 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1B15F1CD5342000B25401 /* Freddy.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		31D1B16D1CD5363100B25401 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1B1631CD5342000B25401 /* Freddy.framework */; };
+		31D1B16E1CD5363100B25401 /* Freddy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1B1631CD5342000B25401 /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96463F791CB1858A00404268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96463F781CB1858A00404268 /* AppDelegate.swift */; };
 		96463F7B1CB1858A00404268 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96463F7A1CB1858A00404268 /* ViewController.swift */; };
 		96463F7E1CB1858A00404268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96463F7C1CB1858A00404268 /* Main.storyboard */; };
@@ -28,6 +31,62 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		31D1B15E1CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF3E1C23612000D77BF1;
+			remoteInfo = Freddy;
+		};
+		31D1B1601CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF471C23612000D77BF1;
+			remoteInfo = FreddyTests;
+		};
+		31D1B1621CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF1F1C23610B00D77BF1;
+			remoteInfo = MobileFreddy;
+		};
+		31D1B1641CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF291C23610B00D77BF1;
+			remoteInfo = MobileFreddyTests;
+		};
+		31D1B1661CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF5A1C23612900D77BF1;
+			remoteInfo = TVFreddy;
+		};
+		31D1B1681CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF631C23612A00D77BF1;
+			remoteInfo = TVFreddyTests;
+		};
+		31D1B16A1CD5342000B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB6ADF761C23613200D77BF1;
+			remoteInfo = NanoFreddy;
+		};
+		31D1B16F1CD5363100B25401 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DB6ADF1E1C23610B00D77BF1;
+			remoteInfo = MobileFreddy;
+		};
 		96463F8A1CB1858A00404268 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 96463F6D1CB1858A00404268 /* Project object */;
@@ -44,8 +103,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		31D1B1711CD5363100B25401 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				31D1B16E1CD5363100B25401 /* Freddy.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		314388011CC07E7700DD4F85 /* NPviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NPviewController.swift; sourceTree = "<group>"; };
+		31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Freddy.xcodeproj; path = Vendor/Freddy/Freddy.xcodeproj; sourceTree = "<group>"; };
 		96463F751CB1858A00404268 /* hospitalist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hospitalist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96463F781CB1858A00404268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96463F7A1CB1858A00404268 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +148,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D1B16D1CD5363100B25401 /* Freddy.framework in Frameworks */,
+				31D1B16C1CD534A700B25401 /* Freddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +170,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31D1B1551CD5341F00B25401 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31D1B15F1CD5342000B25401 /* Freddy.framework */,
+				31D1B1611CD5342000B25401 /* FreddyTests.xctest */,
+				31D1B1631CD5342000B25401 /* Freddy.framework */,
+				31D1B1651CD5342000B25401 /* MobileFreddyTests.xctest */,
+				31D1B1671CD5342000B25401 /* Freddy.framework */,
+				31D1B1691CD5342000B25401 /* TVFreddyTests.xctest */,
+				31D1B16B1CD5342000B25401 /* Freddy.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		96463F6C1CB1858A00404268 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +199,7 @@
 				96463F8C1CB1858A00404268 /* hospitalistTests */,
 				96463F971CB1858A00404268 /* hospitalistUITests */,
 				96463F761CB1858A00404268 /* Products */,
+				31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,10 +255,12 @@
 				96463F711CB1858A00404268 /* Sources */,
 				96463F721CB1858A00404268 /* Frameworks */,
 				96463F731CB1858A00404268 /* Resources */,
+				31D1B1711CD5363100B25401 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				31D1B1701CD5363100B25401 /* PBXTargetDependency */,
 			);
 			name = hospitalist;
 			productName = hospitalist;
@@ -245,6 +338,12 @@
 			mainGroup = 96463F6C1CB1858A00404268;
 			productRefGroup = 96463F761CB1858A00404268 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 31D1B1551CD5341F00B25401 /* Products */;
+					ProjectRef = 31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				96463F741CB1858A00404268 /* hospitalist */,
@@ -253,6 +352,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		31D1B15F1CD5342000B25401 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 31D1B15E1CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		31D1B1611CD5342000B25401 /* FreddyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FreddyTests.xctest;
+			remoteRef = 31D1B1601CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		31D1B1631CD5342000B25401 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 31D1B1621CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		31D1B1651CD5342000B25401 /* MobileFreddyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MobileFreddyTests.xctest;
+			remoteRef = 31D1B1641CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		31D1B1671CD5342000B25401 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 31D1B1661CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		31D1B1691CD5342000B25401 /* TVFreddyTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = TVFreddyTests.xctest;
+			remoteRef = 31D1B1681CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		31D1B16B1CD5342000B25401 /* Freddy.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Freddy.framework;
+			remoteRef = 31D1B16A1CD5342000B25401 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		96463F731CB1858A00404268 /* Resources */ = {
@@ -321,6 +472,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		31D1B1701CD5363100B25401 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MobileFreddy;
+			targetProxy = 31D1B16F1CD5363100B25401 /* PBXContainerItemProxy */;
+		};
 		96463F8B1CB1858A00404268 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 96463F741CB1858A00404268 /* hospitalist */;
@@ -442,6 +598,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = hospitalist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.hospitalist;
@@ -456,6 +613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = hospitalist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.hospitalist;

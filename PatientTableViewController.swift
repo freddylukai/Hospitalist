@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Freddy
 
 class PatientTableViewController: UITableViewController {
 
@@ -24,7 +25,7 @@ class PatientTableViewController: UITableViewController {
         loadPatients()
     }
 
-    func loadSamplePatients(){
+    /*func loadSamplePatients(){
         let patient1 = Patient(name: "Doug Stamper", index: 1)
         let patient2 = Patient(name: "Zoe Barnes", index: 4)
         let patient3 = Patient(name: "Frank Underwood", index: 3)
@@ -32,54 +33,52 @@ class PatientTableViewController: UITableViewController {
         patients.append(patient1!)
         patients.append(patient2!)
         patients.append(patient3!)
-    }
+    }*/
+    
+    
     
     func loadPatients(){
-        let URL = NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/queue")
+        let URL = NSURL(string: "http://ec2-52-90-89-173.compute-1.amazonaws.com/queue/")
         
         do {
-            let htmlSource = try NSString(contentsOfURL: URL!, encoding: NSUTF8StringEncoding)
-            let data = htmlSource.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)!
+            print("here we are")
             
-            var foo = htmlSource.componentsSeparatedByString("\"")
-            
-            var name = foo[5]
-            var index = Int(foo[21])
-            let patient1 = Patient(name: name, index: index!)
-            
-            var name2 = foo[25]
-            var index2 = Int(foo[41])
-            let patient2 = Patient(name: name2, index: index2!)
-            
-            var name3 = foo[45]
-            var index3 = Int(foo[61])
-            let patient3 = Patient(name: name3, index: index3!)
-            
-            patients.append(patient1!)
-            patients.append(patient2!)
-            patients.append(patient3!)
-            
-            
-            /*print(foo.count)
-            print(foo[5])
-            *var dataArray = split(htmlSource) {$0 == ":"}*/
-            
-           /* do {
-                let json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments ) as! [String: AnyObject]
-                
-                if let p = json["patientnames"] as? [String] {
-                    print(p)
+            var optData:NSData? = nil
+            do {
+                optData = try NSData(contentsOfURL: URL!, options: NSDataReadingOptions())
+            }
+            catch {
+                print("Handle \(error) here")
+            }
+            print("what about here")
+            if let data = optData {
+                print("here i am")
+                let myj = try JSON(data: data)
+                print("did we get this far")
+                print(myj)
+                let jres = try myj.array("patients")
+                for (index, v) in jres.enumerate() {
+                    print("index = " + String(index))
+                    print("v = " + String(v))
+                    let fnam = try v.string("firstname")
+                    print("fname : "+fnam)
+                    let lnam = try v.string("lastname")
+                    print("lname : "+lnam)
+                    let full = fnam + " " + lnam
+                    let tot = Int(try v.string("esi"))
+                    print("tot : "+String(tot))
+                    let ava = Int(try v.string("ID"))
+                    print("ava : "+String(ava))
+                    
+                    let cur = Patient(name: full, index: tot!, id: ava!)
+                    patients.append(cur!)
                 }
-            } catch {
-                print("error: \(error)")
-            }*/
+            }
         }
             
         catch let error as NSError{
             print ("ERROR: \(error)")
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,7 +107,8 @@ class PatientTableViewController: UITableViewController {
         let patient = patients[indexPath.row]
         
         cell.nameLabel.text = patient.name
-        cell.indexLabel.text = String(patient.index)
+        cell.indexLabel.text = "ESI: " + String(patient.index)
+        cell.id = patient.id
         
         return cell
     }

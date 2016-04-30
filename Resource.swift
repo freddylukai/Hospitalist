@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Freddy
 
 class Resource{
     // MARK: Properties
@@ -15,14 +16,10 @@ class Resource{
     var available: Int
     
     //MARK: Initialization
+    
     init?(name: String, total: Int, available: Int){
         self.name = name
         self.total = total
         self.available = available
-        
-        //Initialization should fail if name is empty or index is less than 0
-        if name.isEmpty  {
-            return nil
-        }
     }
 }
