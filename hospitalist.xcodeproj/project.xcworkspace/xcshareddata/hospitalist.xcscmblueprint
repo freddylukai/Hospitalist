@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "46E3FD196324DF6968CFE9C1701D566EB563916A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6ADA245F937D8ED6D99F5A7865E19F5267A169E2" : 0,
+    "46E3FD196324DF6968CFE9C1701D566EB563916A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "E3F70212-9FBE-4262-B1E2-03BE0D427BF2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6ADA245F937D8ED6D99F5A7865E19F5267A169E2" : "FinalInterface\/Vendor\/Freddy\/",
+    "46E3FD196324DF6968CFE9C1701D566EB563916A" : "FinalInterface\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "hospitalist",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "hospitalist.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/freddylukai\/Hospitalist.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "46E3FD196324DF6968CFE9C1701D566EB563916A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bignerdranch\/Freddy.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6ADA245F937D8ED6D99F5A7865E19F5267A169E2"
+    }
+  ]
+}
