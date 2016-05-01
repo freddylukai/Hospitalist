@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		314388021CC07E7700DD4F85 /* NPviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314388011CC07E7700DD4F85 /* NPviewController.swift */; };
-		31D1B16C1CD534A700B25401 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1B15F1CD5342000B25401 /* Freddy.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		31D1B16D1CD5363100B25401 /* Freddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1B1631CD5342000B25401 /* Freddy.framework */; };
 		31D1B16E1CD5363100B25401 /* Freddy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31D1B1631CD5342000B25401 /* Freddy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96463F791CB1858A00404268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96463F781CB1858A00404268 /* AppDelegate.swift */; };
@@ -133,7 +132,7 @@
 		96463F941CB1858A00404268 /* hospitalistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hospitalistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96463F981CB1858A00404268 /* hospitalistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hospitalistUITests.swift; sourceTree = "<group>"; };
 		96463F9A1CB1858A00404268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9656A0841CCFE1D600107AF7 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		9656A0841CCFE1D600107AF7 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = ../Resource.swift; sourceTree = "<group>"; };
 		9656A0861CCFE5D600107AF7 /* ResourceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewCell.swift; sourceTree = "<group>"; };
 		9656A0881CCFE82400107AF7 /* ResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceTableViewController.swift; path = hospitalist/ResourceTableViewController.swift; sourceTree = "<group>"; };
 		9684F8211CB336D600C4EDF1 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = hospitalist/SecondViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +148,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				31D1B16D1CD5363100B25401 /* Freddy.framework in Frameworks */,
-				31D1B16C1CD534A700B25401 /* Freddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				31D1B1541CD5341F00B25401 /* Freddy.xcodeproj */,
-				9656A0841CCFE1D600107AF7 /* Resource.swift */,
 				96F31AC01CC5DEE10087C89B /* Patient.swift */,
 				96F31AB81CC5D9C70087C89B /* PatientTableViewController.swift */,
 				9656A0861CCFE5D600107AF7 /* ResourceTableViewCell.swift */,
@@ -217,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				96463F781CB1858A00404268 /* AppDelegate.swift */,
+				9656A0841CCFE1D600107AF7 /* Resource.swift */,
 				96463F7A1CB1858A00404268 /* ViewController.swift */,
 				96463F7C1CB1858A00404268 /* Main.storyboard */,
 				314388011CC07E7700DD4F85 /* NPviewController.swift */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Freddy
+
 
 class Resource{
     // MARK: Properties
